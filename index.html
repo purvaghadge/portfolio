@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Purva | Portfolio</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #0b1220;
+  color: #e5e7eb;
+}
+
+/* NAV */
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+  background: #0f172a;
+  position: sticky;
+  top: 0;
+}
+
+nav a {
+  color: #93c5fd;
+  margin-left: 20px;
+  text-decoration: none;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.hero h1 {
+  font-size: 40px;
+}
+
+.hero p {
+  color: #9ca3af;
+}
+
+/* SECTION */
+section {
+  padding: 50px 15%;
+}
+
+h2 {
+  color: #60a5fa;
+}
+
+/* CARD */
+.card {
+  background: #111827;
+  padding: 20px;
+  margin: 15px 0;
+  border-radius: 12px;
+}
+
+/* SKILLS */
+.skills span {
+  display: inline-block;
+  background: #1f2937;
+  padding: 8px 12px;
+  margin: 5px;
+  border-radius: 8px;
+}
+
+/* PROJECT */
+.project-title {
+  cursor: pointer;
+  color: #93c5fd;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 6px;
+}
+
+.project-title:hover {
+  color: #60a5fa;
+}
+
+/* MODAL */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+}
+
+.modal-content {
+  background: #111827;
+  padding: 20px;
+  width: 50%;
+  margin: 10% auto;
+  border-radius: 10px;
+}
+
+.close {
+  float: right;
+  cursor: pointer;
+  color: red;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div><b>Purva Ghadge</b></div>
+  <div>
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <h1>Computer Science Graduate</h1>
+  <p>Building AI, Data & Real-World Impact Systems</p>
+</div>
+
+<section id="about">
+  <h2>About Me</h2>
+  <div class="card">
+    I am a Computer Science graduate focused on building scalable and practical software solutions using AI, data analytics, and full-stack development.  
+    I enjoy designing systems that solve real-world problems, improve efficiency, and create meaningful user experiences.  
+    I am continuously learning modern technologies and applying them through hands-on projects in web development and data-driven applications.
+  </div>
+</section>
+
+<section id="experience">
+  <h2>Work Experience</h2>
+
+  <div class="card">
+    <b>Intern / Developer Role</b><br><br>
+    • Developed web applications using Python and Flask<br>
+    • Integrated backend APIs and improved system performance<br>
+    • Built and optimized dashboard-based UI for better user experience<br>
+    • Worked on debugging, testing, and feature enhancements in live projects
+  </div>
+</section>
+
+<section id="education">
+  <h2>Education</h2>
+
+  <div class="card">
+    <b>BSc / MSc Computer Science</b><br>
+    Focused on programming, data structures, databases, AI fundamentals, and software engineering principles.
+  </div>
+
+  <div class="card">
+    <b>HSC (12th)</b><br>
+    Science stream with focus on Mathematics and Computer Science fundamentals.
+  </div>
+
+  <div class="card">
+    <b>SSC (10th)</b><br>
+    Completed with strong academic foundation and interest in logical reasoning.
+  </div>
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="card skills">
+    <span>Python</span>
+    <span>Flask</span>
+    <span>HTML</span>
+    <span>CSS</span>
+    <span>JavaScript</span>
+    <span>SQL</span>
+    <span>Data Analysis</span>
+    <span>GitHub</span>
+    <span>AI Basics</span>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+
+  <div class="card">
+    <div class="project-title" onclick="openModal('p1')">
+      Spatio Temporal Crime Analysis
+    </div>
+    <br>
+    Data-driven analysis of crime patterns using time and location-based datasets.
+  </div>
+
+  <div class="card">
+    <div class="project-title" onclick="openModal('p2')">
+      Cloud / SaaS Expense Tracker
+    </div>
+    <br>
+    Full-stack expense tracking system with authentication and analytics dashboard.
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <div class="card">
+    LinkedIn: 
+    <a href="https://linkedin.com" target="_blank">View Profile</a><br><br>
+
+    GitHub: 
+    <a href="https://github.com" target="_blank">View Projects</a>
+  </div>
+</section>
+
+<!-- MODAL -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">X</span>
+    <div id="modal-text"></div>
+  </div>
+</div>
+
+<script>
+function openModal(project) {
+  let text = "";
+
+  if(project === "p1") {
+    text = `
+      <h3>Spatio Temporal Crime Analysis</h3>
+      <p>
+      This project analyzes crime data based on geography and time patterns.  
+      It identifies high-risk zones, peak crime hours, and trends using data visualization techniques.  
+      The goal is to support better decision-making for safety and planning.
+      </p>
+    `;
+  }
+
+  if(project === "p2") {
+    text = `
+      <h3>Expense Tracker SaaS App</h3>
+      <p>
+      A full-stack SaaS application for tracking personal expenses in a structured way.  
+      It provides monthly and yearly breakdowns, authentication, and a dashboard-based analytics view.  
+      The system helps users understand spending patterns and improve financial planning.
+      </p>
+    `;
+  }
+
+  document.getElementById("modal-text").innerHTML = text;
+  document.getElementById("modal").style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById("modal").style.display = "none";
+}
+</script>
+
+</body>
+</html>
