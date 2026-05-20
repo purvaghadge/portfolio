@@ -1,130 +1,302 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Purva | Portfolio</title>
 
 <style>
-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: #0f172a;
-  color: #e5e7eb;
+
+html{
+  scroll-behavior:smooth;
 }
 
-/* NAV */
-nav {
-  display: flex;
-  justify-content: space-between;
-  padding: 14px 30px;
-  background: #111c33;
-  position: sticky;
-  top: 0;
-  z-index: 100;
+body{
+  margin:0;
+  font-family:'Segoe UI',sans-serif;
+  background:#0f172a;
+  color:#e5e7eb;
 }
 
-nav a {
-  color: #93c5fd;
-  margin-left: 14px;
-  text-decoration: none;
-  font-size: 14px;
+/* NAVBAR */
+
+nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:16px 40px;
+  background:rgba(17,28,51,0.95);
+  backdrop-filter:blur(10px);
+  position:sticky;
+  top:0;
+  z-index:100;
+  box-shadow:0 4px 20px rgba(0,0,0,0.35);
 }
 
-nav a:hover {
-  color: #60a5fa;
+.logo{
+  font-size:28px;
+  font-weight:700;
+  color:#ffffff;
+  letter-spacing:1px;
+}
+
+nav a{
+  color:#93c5fd;
+  margin-left:16px;
+  text-decoration:none;
+  font-size:14px;
+  transition:0.3s;
+}
+
+nav a:hover{
+  color:#60a5fa;
 }
 
 /* HERO */
-.hero {
-  text-align: center;
-  padding: 60px 20px 40px;
+
+.hero{
+  text-align:center;
+  padding:70px 20px 50px;
 }
 
-.hero h1 {
-  font-size: 38px;
-  margin-bottom: 6px;
+.profile-pic{
+  width:180px;
+  height:180px;
+  border-radius:50%;
+  object-fit:cover;
+  border:4px solid #60a5fa;
+
+  box-shadow:
+    0 0 20px rgba(96,165,250,0.5),
+    0 15px 35px rgba(0,0,0,0.5);
+
+  transition:0.4s;
 }
 
-.hero p {
-  color: #cbd5e1;
-  font-size: 16px;
+.profile-pic:hover{
+  transform:scale(1.05);
 }
 
-/* SECTION */
-section {
-  padding: 30px 14%;
+.hero h1{
+  font-size:42px;
+  margin-top:22px;
+  margin-bottom:10px;
 }
 
-h2 {
-  color: #60a5fa;
-  margin-bottom: 10px;
-  font-size: 20px;
+.hero p{
+  color:#cbd5e1;
+  font-size:18px;
+}
+
+/* SECTIONS */
+
+section{
+  padding:40px 14%;
+}
+
+h2{
+  color:#60a5fa;
+  margin-bottom:18px;
+  font-size:24px;
 }
 
 /* CARD */
-.card {
-  background: #111c33;
-  padding: 14px 16px;
-  margin: 10px 0;
-  border-radius: 10px;
-  line-height: 1.5;
+
+.card{
+  background:linear-gradient(145deg,#111c33,#182846);
+
+  padding:20px;
+  margin:16px 0;
+
+  border-radius:18px;
+
+  border:1px solid rgba(255,255,255,0.05);
+
+  line-height:1.7;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.35),
+    inset 0 1px 1px rgba(255,255,255,0.04);
+
+  transition:0.35s ease;
+}
+
+.card:hover{
+  transform:translateY(-6px);
+
+  box-shadow:
+    0 18px 40px rgba(0,0,0,0.5),
+    0 0 20px rgba(96,165,250,0.15);
 }
 
 /* SKILLS */
-.skills span {
-  display: inline-block;
-  background: #1e293b;
-  padding: 6px 10px;
-  margin: 4px;
-  border-radius: 6px;
-  font-size: 13px;
+
+.skills span{
+  display:inline-block;
+  background:#1e293b;
+  padding:8px 14px;
+  margin:6px;
+  border-radius:10px;
+  font-size:13px;
+
+  transition:0.3s;
+}
+
+.skills span:hover{
+  background:#2563eb;
+  transform:scale(1.05);
 }
 
 /* PROJECT TITLE */
-.project-title {
-  cursor: pointer;
-  color: #93c5fd;
-  font-weight: 600;
-  display: inline-block;
-  margin-bottom: 4px;
+
+.project-title{
+  cursor:pointer;
+  color:#93c5fd;
+  font-weight:600;
+  display:inline-block;
+  margin-bottom:6px;
+  font-size:18px;
 }
 
-.project-title:hover {
-  color: #60a5fa;
+.project-title:hover{
+  color:#60a5fa;
+}
+
+/* PROJECT BUTTONS */
+
+.project-links{
+  margin-top:14px;
+}
+
+.project-links a{
+  display:inline-block;
+
+  margin-right:10px;
+  margin-top:8px;
+
+  padding:9px 16px;
+
+  border-radius:10px;
+
+  text-decoration:none;
+  font-size:13px;
+  font-weight:600;
+
+  background:#2563eb;
+  color:white;
+
+  transition:0.3s;
+}
+
+.project-links a:hover{
+  background:#3b82f6;
+  transform:scale(1.05);
+}
+
+/* CONTACT LINKS */
+
+.contact-links a{
+  color:#93c5fd;
+  text-decoration:none;
+}
+
+.contact-links a:hover{
+  color:#60a5fa;
 }
 
 /* MODAL */
-.modal {
-  display: none;
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.7);
+
+.modal{
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+
+  width:100%;
+  height:100%;
+
+  background:rgba(0,0,0,0.75);
 }
 
-.modal-content {
-  background: #111c33;
-  padding: 18px;
-  width: 45%;
-  margin: 8% auto;
-  border-radius: 10px;
+.modal-content{
+  background:linear-gradient(145deg,#111c33,#182846);
+
+  padding:25px;
+
+  width:45%;
+
+  margin:8% auto;
+
+  border-radius:18px;
+
+  box-shadow:
+    0 10px 40px rgba(0,0,0,0.6);
 }
 
-.close {
-  float: right;
-  cursor: pointer;
-  color: #ff6b6b;
-  font-size: 18px;
+.close{
+  float:right;
+  cursor:pointer;
+  color:#ff6b6b;
+  font-size:20px;
 }
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  nav{
+    flex-direction:column;
+    gap:12px;
+    padding:18px;
+  }
+
+  nav div:last-child{
+    text-align:center;
+  }
+
+  nav a{
+    display:inline-block;
+    margin:5px;
+  }
+
+  section{
+    padding:30px 24px;
+  }
+
+  .hero h1{
+    font-size:30px;
+  }
+
+  .hero p{
+    font-size:15px;
+  }
+
+  .logo{
+    font-size:22px;
+  }
+
+  .modal-content{
+    width:82%;
+    margin-top:25%;
+  }
+
+}
+
 </style>
 </head>
 
 <body>
 
+<!-- NAVBAR -->
+
 <nav>
-  <div><b>👩‍💻 Purva Ghadge</b></div>
+
+  <div class="logo">
+    👩‍💻 Purva Ghadge
+  </div>
+
   <div>
     <a href="#about">About</a>
     <a href="#experience">Experience</a>
@@ -133,165 +305,416 @@ h2 {
     <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
   </div>
+
 </nav>
 
+<!-- HERO -->
+
 <div class="hero">
+
+  <!-- ========================= -->
+  <!-- ADD YOUR PHOTO HERE -->
+  <!-- ========================= -->
+
+  <img src="purva.jpg" class="profile-pic">
+
   <h1>🚀 Computer Science Graduate</h1>
-  <p>AI • Data • Full Stack • Real-world problem solving</p>
+
+  <p>
+    AI • Data • Full Stack • Real-world problem solving
+  </p>
+
 </div>
 
 <!-- ABOUT -->
+
 <section id="about">
+
   <h2>🧠 About Me</h2>
+
   <div class="card">
-    I am a Computer Science graduate passionate about building scalable software solutions using AI, data analytics, and full-stack development.  
-    I enjoy turning real-world problems into practical tech solutions and continuously improving through hands-on projects.
+
+    I am a Computer Science graduate passionate about building scalable software solutions using AI, data analytics, cloud technologies, and full-stack development.
+
+    I enjoy transforming real-world challenges into impactful digital solutions while continuously learning through practical implementation and innovation.
+
+    My interests include Artificial Intelligence, SaaS applications, Data Analytics, Cloud Computing, and modern web technologies.
+
   </div>
+
 </section>
 
 <!-- EXPERIENCE -->
+
 <section id="experience">
+
   <h2>💼 Experience</h2>
 
   <div class="card">
-    <b>Bhanzu (Remote) 👨‍🏫</b><br>
-    Math Trainer<br>
-    • Conducted live classes for students (10–16 yrs)<br>
-    • Created interactive learning sessions 📚<br>
-    • Improved student engagement & feedback
+
+    <b>Bhanzu (Remote) 👨‍🏫</b>
+    <br>
+
+    Math Trainer
+
+    <br><br>
+
+    • Conducted engaging live sessions for students aged 10–16 years.
+
+    <br>
+
+    • Designed interactive learning methods to improve conceptual understanding.
+
+    <br>
+
+    • Improved student participation and overall learning experience.
+
+    <br>
+
+    • Managed communication and doubt-solving sessions effectively.
+
   </div>
 
   <div class="card">
-    <b>Amazeheads LLP 🤖</b><br>
-    Robotics Trainer<br>
-    • Trained teachers in robotics & MIT App Inventor<br>
-    • Conducted school workshops 🏫<br>
-    • Organized robotics exhibitions
+
+    <b>Amazeheads LLP 🤖</b>
+
+    <br>
+
+    Robotics Trainer
+
+    <br><br>
+
+    • Trained teachers and students in Robotics and MIT App Inventor.
+
+    <br>
+
+    • Conducted workshops and technical exhibitions in schools.
+
+    <br>
+
+    • Assisted students in developing beginner-level robotics projects.
+
+    <br>
+
+    • Encouraged practical and hands-on STEM learning.
+
   </div>
+
 </section>
 
 <!-- EDUCATION -->
+
 <section id="education">
+
   <h2>🎓 Education</h2>
 
   <div class="card">
-    <b>MSc Computer Science</b> (2024–2026)<br>
+
+    <b>MSc Computer Science</b> (2024–2026)
+
+    <br>
+
     D.G. Ruparel College, Mumbai University
+
   </div>
 
   <div class="card">
-    <b>BSc Computer Science</b> (2021–2024)<br>
-    9.06 CGPA
+
+    <b>BSc Computer Science</b> (2021–2024)
+
+    <br>
+
+    Graduated with 9.06 CGPA
+
   </div>
 
   <div class="card">
-    <b>HSC</b> (90.33%) 🎯
+
+    <b>HSC</b>
+
+    <br>
+
+    Scored 90.33%
+
   </div>
 
   <div class="card">
-    <b>SSC</b> (85.60%) 📘
+
+    <b>SSC</b>
+
+    <br>
+
+    Scored 85.60%
+
   </div>
+
 </section>
 
 <!-- SKILLS -->
+
 <section id="skills">
+
   <h2>⚡ Skills</h2>
+
   <div class="card skills">
+
     <span>Python</span>
+
     <span>Flask</span>
-    <span>HTML</span>
-    <span>CSS</span>
+
     <span>JavaScript</span>
+
+    <span>HTML</span>
+
+    <span>CSS</span>
+
     <span>SQL</span>
-    <span>Cloud ☁️</span>
-    <span>AI 🤖</span>
+
+    <span>Cloud Computing ☁️</span>
+
+    <span>Artificial Intelligence 🤖</span>
+
+    <span>Data Analytics 📊</span>
+
     <span>Networking</span>
+
+    <span>Git & GitHub</span>
+
+    <span>Firebase</span>
+
+    <span>Problem Solving</span>
+
+    <span>IoT</span>
+
   </div>
+
 </section>
 
 <!-- PROJECTS -->
+
 <section id="projects">
+
   <h2>📁 Projects</h2>
 
+  <!-- PROJECT 1 -->
+
   <div class="card">
+
     <div class="project-title" onclick="openModal('p1')">
       📍 Spatio Temporal Crime Analysis
     </div>
+
     <br>
-    Crime pattern detection using spatial + time-based analysis.
+
+    Crime pattern detection using location-based and time-based analytics.
+
+    <div class="project-links">
+
+      <a href="https://github.com/purvaghadge/crime_prediction_app" target="_blank">
+        🔗 GitHub
+      </a>
+
+    </div>
+
   </div>
 
+  <!-- PROJECT 2 -->
+
   <div class="card">
+
     <div class="project-title" onclick="openModal('p2')">
       💰 Cloud Expense Tracker
     </div>
+
     <br>
-    SaaS expense tracking system with dashboards & authentication.
+
+    SaaS-based expense tracking platform with authentication and analytics.
+
+    <div class="project-links">
+
+      <a href="https://expensetracker-bejz.onrender.com" target="_blank">
+        🚀 Live Demo
+      </a>
+
+    </div>
+
   </div>
 
+  <!-- PROJECT 3 -->
+
   <div class="card">
+
     <div class="project-title" onclick="openModal('p3')">
       🌫️ Air Quality Monitoring System
     </div>
+
     <br>
-    IoT-based real-time air pollution monitoring system.
+
+    IoT-based real-time air pollution monitoring system using sensors.
+
   </div>
 
+  <!-- PROJECT 4 -->
+
   <div class="card">
+
     <div class="project-title" onclick="openModal('p4')">
       🎨 AI Image Generator
     </div>
+
     <br>
-    AI-powered image generation using prompts.
+
+    AI-powered image generation system using prompt engineering.
+
   </div>
+
 </section>
 
 <!-- CONTACT -->
+
 <section id="contact">
+
   <h2>📬 Contact</h2>
-  <div class="card">
-    🔗 LinkedIn: <a href="https://linkedin.com" target="_blank">Profile</a><br><br>
-    💻 GitHub: <a href="https://github.com" target="_blank">Projects</a><br><br>
-    📧 Email: purvaghadgesns@gmail.com<br>
-    📱 Phone: +91 XXXXX XXXXX
+
+  <div class="card contact-links">
+
+    🔗 LinkedIn:
+    <a href="https://linkedin.com" target="_blank">
+      View Profile
+    </a>
+
+    <br><br>
+
+    💻 GitHub:
+    <a href="https://github.com/purvaghadge" target="_blank">
+      View Projects
+    </a>
+
+    <br><br>
+
+    📧 Email:
+    purvaghadgesns@gmail.com
+
+    <br><br>
+
+    📱 Phone:
+    +91 XXXXX XXXXX
+
   </div>
+
 </section>
 
 <!-- MODAL -->
+
 <div id="modal" class="modal">
+
   <div class="modal-content">
-    <span class="close" onclick="closeModal()">X</span>
+
+    <span class="close" onclick="closeModal()">✖</span>
+
     <div id="modal-text"></div>
+
   </div>
+
 </div>
 
+<!-- SCRIPT -->
+
 <script>
-function openModal(project) {
+
+function openModal(project){
+
   let text = "";
 
-  if(project === "p1") {
-    text = "<h3>📍 Spatio Temporal Crime Analysis</h3><p>Detects crime patterns using location + time data to identify hotspots and trends.</p>";
+  if(project === "p1"){
+
+    text =
+    `
+    <h2>📍 Spatio Temporal Crime Analysis</h2>
+
+    <p>
+    This project analyzes crime patterns using spatial and temporal datasets to identify crime hotspots, trends, and predictive insights.
+    </p>
+
+    <p>
+    Technologies Used:
+    Python, Data Analytics, Visualization, Machine Learning
+    </p>
+    `;
   }
 
-  if(project === "p2") {
-    text = "<h3>💰 Cloud Expense Tracker</h3><p>SaaS-based expense tracking system with authentication and analytics dashboard.</p>";
+  if(project === "p2"){
+
+    text =
+    `
+    <h2>💰 Cloud Expense Tracker</h2>
+
+    <p>
+    A modern SaaS expense management platform featuring authentication, dashboards, analytics, and responsive UI.
+    </p>
+
+    <p>
+    Technologies Used:
+    Flask, Firebase, HTML, CSS, JavaScript
+    </p>
+    `;
   }
 
-  if(project === "p3") {
-    text = "<h3>🌫️ Air Quality System</h3><p>IoT-based system for real-time air quality monitoring using sensors.</p>";
+  if(project === "p3"){
+
+    text =
+    `
+    <h2>🌫️ Air Quality Monitoring System</h2>
+
+    <p>
+    IoT-based monitoring system that tracks pollution and environmental data in real-time using sensors.
+    </p>
+
+    <p>
+    Technologies Used:
+    IoT, Sensors, Embedded Systems
+    </p>
+    `;
   }
 
-  if(project === "p4") {
-    text = "<h3>🎨 AI Image Generator</h3><p>Generates images using AI prompt-based API system.</p>";
+  if(project === "p4"){
+
+    text =
+    `
+    <h2>🎨 AI Image Generator</h2>
+
+    <p>
+    AI-powered application capable of generating creative visuals using prompt-based input systems.
+    </p>
+
+    <p>
+    Technologies Used:
+    AI APIs, Prompt Engineering, Web Development
+    </p>
+    `;
   }
 
   document.getElementById("modal-text").innerHTML = text;
+
   document.getElementById("modal").style.display = "block";
 }
 
-function closeModal() {
+function closeModal(){
+
   document.getElementById("modal").style.display = "none";
 }
+
+window.onclick = function(event){
+
+  let modal = document.getElementById("modal");
+
+  if(event.target == modal){
+
+    modal.style.display = "none";
+  }
+}
+
 </script>
 
 </body>
